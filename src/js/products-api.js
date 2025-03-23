@@ -22,3 +22,8 @@ export async function getProductsByCategory(category, currentPage = 1) {
   );
   return res.data.products;
 }
+
+export async function getProductsBySearchQuery(query, currentPage = 1) {
+  const res = await axios.get(`${BASE_URL}/search?q=${query}`);
+  return res.data.products;
+}
