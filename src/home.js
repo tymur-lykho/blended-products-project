@@ -8,8 +8,12 @@ import {
 } from './js/handlers';
 
 //Логіка сторінки Home
-renderCategories(await getCategories());
-renderProducts(await getProducts());
+initHome();
+
+async function initHome() {
+  renderCategories(await getCategories());
+  renderProducts(await getProducts());
+}
 
 refs.categoryList.addEventListener('click', handleClickbyCategory);
 
